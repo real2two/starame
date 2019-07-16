@@ -1,0 +1,1 @@
+You can punch your opponent and it will cause 1-5 damage.
