@@ -14,7 +14,7 @@ Make sure you have node.js. You can get it here: https://nodejs.org/en/
 
 4. Create a file called "run.bat" (well it can be anything.bat). Edit "run.bat" and make the file contain "node bot.js". After you edit the file, close the file.
 
-5. Open the file "run.bat". It should say "Starame is ready!" soon in the console/batch file.
+5. Open the file "run.bat". It should say "Starame is ready!" soon in the console/batch program.
 
 ## What Each Folder Means
 The main data files are in the folder "data\".
