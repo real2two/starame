@@ -3,10 +3,15 @@ The official code for the Discord bot Starame.
 
 # What Each Folder Means
 The main data files are in the folder "data\".
+
 The folder "battles" shows the data of the battles going on (using the bot).
+
 The folder "coins" shows the data of how much coins/gold a user has.
+
 The folder "maxhealth" shows the data of the start HP a user has in a start of a battle. Using the command used to buy health limits the max health to 999HP.
+
 The folder "moveid" shows the data of the moves there are.
+
 The folder "moves" shows the data of what moves users have.
 
 # Need help with move making?
