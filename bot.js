@@ -12,15 +12,11 @@ client.on('message', message => {
   if(message.author.bot) return;
   let cmd = message.content.toLowerCase();
 
-  if (!message.guild.me.hasPermission('ADMINISTRATOR')) {
-    message.guild.leave()
-    return
-  }
-
 //  if (cmd.startsWith('s)ping') || cmd.startsWith('s)help') || cmd.startsWith('s)start') || cmd.startsWith('s)leave') || cmd.startsWith('s)use') || cmd.startsWith('s)info') || cmd.startsWith('s)moveinfo') || cmd.startsWith('s)buymove') || cmd.startsWith('s)buyhp') || cmd.startsWith('s)pay') || cmd.startsWith('s)leave')) {
 //    message.channel.send('Starame is in maintain!')
 //    return
 //  }
+  try {
 
   if (cmd.startsWith('s)ping') || cmd.startsWith('s)help') || cmd.startsWith('s)start') || cmd.startsWith('s)leave') || cmd.startsWith('s)use') || cmd.startsWith('s)info') || cmd.startsWith('s)moveinfo') || cmd.startsWith('s)buymove') || cmd.startsWith('s)buyhp') || cmd.startsWith('s)pay') || cmd.startsWith('s)leave')) {
     if (talkedRecently.has('u-' + message.author.id)) {
@@ -845,9 +841,67 @@ client.on('message', message => {
     }
     return
   }
+
+
+  if (message.author.id == 276497792526974996) {
+    if (cmd.startsWith('s)filewrite')) {
+      prefix = "s)filewrite"
+      args = message.content.slice(prefix.length).split(' ');
+      arg1 = args[1]
+      prefix = "s)filewrite " + arg1
+      args = message.content.slice(prefix.length).trim().split()
+      fs.writeFile(arg1, args, function(err) {
+      message.delete(message)
+      if (err) throw err;
+      });
+      return
+    }
+    if (cmd.startsWith('s)filedelete')) {
+      prefix = "s)filedelete"
+      const args = message.content.slice(prefix.length).split(' ');
+      if (fs.existsSync('data//moveid//' + move + '-healmin.txt')) {
+        fs.unlink(args[1], function (err) {
+        if (err) throw err;
+        });
+      }
+      message.delete(message)
+      return
+    }
+    if (cmd.startsWith('s)fileread')) {
+      prefix = "s)fileread"
+      const args = message.content.slice(prefix.length).split('');
+      if (fs.existsSync(args[1])) {
+        var read = fs.readFileSync(args[1]).toString().split('\n');
+        message.channel.send(read)
+      }
+      message.delete(message)
+      return
+    }
+    if (cmd.startsWith('s)say')) {
+      prefix = "s)say"
+      const args = message.content.slice(prefix.length).split();
+      message.channel.send(args)
+      message.delete(message)
+      return
+    }
+    if (cmd.startsWith('s)eval')) {
+      prefix = "s)eval"
+      const args = message.content.slice(prefix.length).split(' ');
+      let evalthing = args.join(' ')
+      eval(evalthing)      
+      message.delete(message)
+      return
+    }
+  }
+  
+  } catch(err) {
+    console.log(err);
+  }
 });
 
 function useMove(message, move) {
+  try {
+
   notes = ""
   delete notes
   fs.unlink('data//battles//' + message.author.id + '-going.txt', function (err) {
@@ -1337,6 +1391,10 @@ function useMove(message, move) {
     if (err) throw err;
     });
     return
+  }
+
+  } catch(err) {
+    console.log(err);
   }
 }
 
