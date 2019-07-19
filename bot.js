@@ -926,7 +926,7 @@ function useMove(message, move) {
         var poisondamageminstring = fs.readFileSync('data//moveid//' + poisonmove + '-' + poisonperson + 'poisonmin.txt').toString().split('\n');
         poisondamagemin = parseFloat(poisondamageminstring, 10)
         movepoisonrandom = Math.floor(Math.random() * (poisondamagemax - poisondamagemin)) + poisondamagemin;
-        if (movepoison < userhp) {
+        if (movepoisonrandom < userhp) {
           userhp = userhp - movepoison
         } else {
           movepoison = userhp - 1
