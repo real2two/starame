@@ -331,14 +331,14 @@ if (cmd.startsWith('s)fightinfo')) {
     userhp = fs.readFileSync('data//battles//' + message.author.id + '-hp.txt').toString().split('\n');
     enemyhp = fs.readFileSync('data//battles//' + opponentid + '-hp.txt').toString().split('\n');
     if (fs.existsSync('data//battles//' + message.author.id + '-poison.txt')) {
-      userpoisonmove = fs.readFileSync('data//battles//' + message.author.id + '-poisonperson.txt').toString().split('\n');
+      userpoisonmove = fs.readFileSync('data//battles//' + message.author.id + '-poison.txt').toString().split('\n');
       userpoisonperson = fs.readFileSync('data//battles//' + message.author.id + '-poisonperson.txt').toString().split('\n');
       userpoisontype = ":white_check_mark: | Move: " + userpoisonmove + " | Move Person: " + userpoisonperson
     } else {
       userpoisontype = ":x:"
     }
     if (fs.existsSync('data//battles//' + opponentid + '-poison.txt')) {
-      enemypoisonmove = fs.readFileSync('data//battles//' + opponentid + '-poisonperson.txt').toString().split('\n');
+      enemypoisonmove = fs.readFileSync('data//battles//' + opponentid + '-poison.txt').toString().split('\n');
       enemypoisonperson = fs.readFileSync('data//battles//' + opponentid + '-poisonperson.txt').toString().split('\n');
       enemypoisontype = ":white_check_mark: | Move: " + enemypoisonmove + " | Move Person: " + enemypoisonperson
     } else {
