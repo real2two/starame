@@ -18,7 +18,7 @@ client.on('message', message => {
 //  }
   try {
 
-  if (cmd.startsWith('s)ping') || cmd.startsWith('s)help') || cmd.startsWith('s)start') || cmd.startsWith('s)leave') || cmd.startsWith('s)use') || cmd.startsWith('s)info') || cmd.startsWith('s)moveinfo') || cmd.startsWith('s)buymove') || cmd.startsWith('s)buyhp') || cmd.startsWith('s)pay') || cmd.startsWith('s)leave')) {
+  if (cmd.startsWith('s)ping') || cmd.starts.With('s)fightinfo') || cmd.startsWith('s)help') || cmd.startsWith('s)start') || cmd.startsWith('s)leave') || cmd.startsWith('s)use') || cmd.startsWith('s)info') || cmd.startsWith('s)moveinfo') || cmd.startsWith('s)buymove') || cmd.startsWith('s)buyhp') || cmd.startsWith('s)pay') || cmd.startsWith('s)leave')) {
     if (talkedRecently.has('u-' + message.author.id)) {
       message.channel.send("You are in a 3 second cooldown.");
       return
@@ -30,7 +30,7 @@ client.on('message', message => {
     }
   }
 
-  if (cmd.startsWith('s)ping') || cmd.startsWith('s)help') || cmd.startsWith('s)start') || cmd.startsWith('s)leave') || cmd.startsWith('s)use') || cmd.startsWith('s)info') || cmd.startsWith('s)moveinfo') || cmd.startsWith('s)buymove') || cmd.startsWith('s)buyhp') || cmd.startsWith('s)pay') || cmd.startsWith('s)leave')) {
+  if (cmd.startsWith('s)ping') || cmd.starts.With('s)fightinfo') || cmd.startsWith('s)help') || cmd.startsWith('s)start') || cmd.startsWith('s)leave') || cmd.startsWith('s)use') || cmd.startsWith('s)info') || cmd.startsWith('s)moveinfo') || cmd.startsWith('s)buymove') || cmd.startsWith('s)buyhp') || cmd.startsWith('s)pay') || cmd.startsWith('s)leave')) {
     if (talkedRecently.has('global')) {
       console.log('"' + message.author.id + ' has tried to run a command during cooldown.')
       message.channel.send("This bot is in a global cooldown of 1 second.");
@@ -323,6 +323,50 @@ client.on('message', message => {
     }
     return
   }
+
+if (cmd.startsWith('s)fightinfo')) {
+  if (fs.existsSync('data//battles//' + message.author.id + '-opponent.txt')) {
+    var opponentid = fs.readFileSync('data//battles//' + message.author.id + '-opponent.txt').toString().split('\n');
+    userhp = fs.readFileSync('data//battles//' + message.author.id + '-hp.txt').toString().split('\n');
+    enemyhp = fs.readFileSync('data//battles//' + opponentid + '-hp.txt').toString().split('\n');
+    if (fs.existsSync('data//battles//' + message.author.id + '-poison.txt')) {
+      userpoisonmove = fs.readFileSync('data//battles//' + message.author.id + '-poisonperson.txt').toString().split('\n');
+      userpoisonperson = fs.readFileSync('data//battles//' + message.author.id + '-poisonperson.txt').toString().split('\n');
+      userpoisontype = ":white_check_mark: | Move: " + userpoisonmove + " | Move Person: " + userpoisonperson
+    } else {
+      userpoisontype = ":x:"
+    }
+    if (fs.existsSync('data//battles//' + opponentid + '-poison.txt')) {
+      enemypoisonmove = fs.readFileSync('data//battles//' + opponentid + '-poisonperson.txt').toString().split('\n');
+      enemypoisonperson = fs.readFileSync('data//battles//' + opponentid + '-poisonperson.txt').toString().split('\n');
+      enemypoisontype = ":white_check_mark: | Move: " + enemypoisonmove + " | Move Person: " + enemypoisonperson
+    } else {
+      enemypoisontype = ":x:"
+    }
+    if (fs.existsSync('data//battles//' + message.author.id + '-going.txt')) {
+      goingperson = message.author
+    } else {
+      goingperson = "<@" + opponentid + ">"
+    }
+    const embed = new Discord.RichEmbed()
+      .setAuthor('Battle Information')
+      .setColor(0xFF0000)
+      .setDescription(message.author + ' **VS** ' + '<@' + opponentid + '>')
+      .addField('Status', "**" + message.author + "'s HP**: " + userhp + "\n**<@" + opponentid + ">'s HP**: " + enemyhp, false)
+      .addField('Information', "Who's Turn: " + goingperson + "\nUser Poison: " + userpoisontype + "\nEnemy Poison: " + enemypoisontype, false)
+      .setFooter('Made for fun!', 'https://cdn.discordapp.com/attachments/585988298573348864/590645802339401741/1180px-Checkmark_green.png')
+    message.channel.send({embed});
+    return
+  } else {
+    if (fs.existsSync('data//coins//' + message.author.id + '.txt')) {
+      message.channel.send("You are not fighting anyone right now.")
+      return
+    } else {
+      message.channel.send("Sorry, but you haven't started the game yet. Use the command `s)start` to start the game!")
+      return
+    }
+  }
+}
 
   if (cmd.startsWith('s)use 1')) {
     if (fs.existsSync('data//battles//' + message.author.id + '-opponent.txt')) {
