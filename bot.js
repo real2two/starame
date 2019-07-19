@@ -12,13 +12,14 @@ client.on('message', message => {
   if(message.author.bot) return;
   let cmd = message.content.toLowerCase();
 
-//  if (cmd.startsWith('s)ping') || cmd.startsWith('s)help') || cmd.startsWith('s)start') || cmd.startsWith('s)leave') || cmd.startsWith('s)use') || cmd.startsWith('s)info') || cmd.startsWith('s)moveinfo') || cmd.startsWith('s)buymove') || cmd.startsWith('s)buyhp') || cmd.startsWith('s)pay') || cmd.startsWith('s)leave')) {
+//  if (cmd.startsWith("s)ping") || cmd.startsWith("s)fightinfo") || cmd.startsWith("s)help") || cmd.startsWith("s)start") || cmd.startsWith("s)leave") || cmd.startsWith("s)use") || cmd.startsWith("s)info") || cmd.startsWith("s)moveinfo") || cmd.startsWith("s)buymove") || cmd.startsWith("s)buyhp") || cmd.startsWith("s)pay") || cmd.startsWith("s)leave")) {
 //    message.channel.send('Starame is in maintain!')
 //    return
 //  }
+
   try {
 
-  if (cmd.startsWith('s)ping') || cmd.starts.With('s)fightinfo') || cmd.startsWith('s)help') || cmd.startsWith('s)start') || cmd.startsWith('s)leave') || cmd.startsWith('s)use') || cmd.startsWith('s)info') || cmd.startsWith('s)moveinfo') || cmd.startsWith('s)buymove') || cmd.startsWith('s)buyhp') || cmd.startsWith('s)pay') || cmd.startsWith('s)leave')) {
+  if (cmd.startsWith("s)ping") || cmd.startsWith("s)fightinfo") || cmd.startsWith("s)help") || cmd.startsWith("s)start") || cmd.startsWith("s)leave") || cmd.startsWith("s)use") || cmd.startsWith("s)info") || cmd.startsWith("s)moveinfo") || cmd.startsWith("s)buymove") || cmd.startsWith("s)buyhp") || cmd.startsWith("s)pay") || cmd.startsWith("s)leave")) {
     if (talkedRecently.has('u-' + message.author.id)) {
       message.channel.send("You are in a 3 second cooldown.");
       return
@@ -30,7 +31,7 @@ client.on('message', message => {
     }
   }
 
-  if (cmd.startsWith('s)ping') || cmd.starts.With('s)fightinfo') || cmd.startsWith('s)help') || cmd.startsWith('s)start') || cmd.startsWith('s)leave') || cmd.startsWith('s)use') || cmd.startsWith('s)info') || cmd.startsWith('s)moveinfo') || cmd.startsWith('s)buymove') || cmd.startsWith('s)buyhp') || cmd.startsWith('s)pay') || cmd.startsWith('s)leave')) {
+  if (cmd.startsWith("s)ping") || cmd.startsWith("s)fightinfo") || cmd.startsWith("s)help") || cmd.startsWith("s)start") || cmd.startsWith("s)leave") || cmd.startsWith("s)use") || cmd.startsWith("s)info") || cmd.startsWith("s)moveinfo") || cmd.startsWith("s)buymove") || cmd.startsWith("s)buyhp") || cmd.startsWith("s)pay") || cmd.startsWith("s)leave")) {
     if (talkedRecently.has('global')) {
       console.log('"' + message.author.id + ' has tried to run a command during cooldown.')
       message.channel.send("This bot is in a global cooldown of 1 second.");
@@ -55,7 +56,7 @@ client.on('message', message => {
       const embed = new Discord.RichEmbed()
         .setAuthor('Help')
         .setColor(0xffff00)
-        .setDescription('`s)help` **-** This is the help command.\n`s)ping` **-** Ping the bot!\n`s)info` **-** See your info.\n`s)pay <mention user> <amount>` **-** Pay someone gold.\n`s)moveinfo <move id>` **-** See information of a move.\n`s)buymove <moveid> <moveslot>` **-** Buy a move.\n`s)buyhp`**-** Buy a single HP for 10 coins.\n`s)fight` **-** Fight someone.\n`s)leave` **-** Exit a fight.\n`s)use[no]` **-** Use a move. [no] can be 1-4 (move number). It is used in a battle.')
+        .setDescription('`s)help` **-** This is the help command.\n`s)ping` **-** Ping the bot!\n`s)info` **-** See your info.\n`s)pay <mention user> <amount>` **-** Pay someone gold.\n`s)moveinfo <move id>` **-** See information of a move.\n`s)buymove <moveid> <moveslot>` **-** Buy a move.\n`s)buyhp`**-** Buy a single HP for 10 coins.\n`s)fight` **-** Fight someone.\n`s)leave` **-** Exit a fight.\n`s)use[no]` **-** Use a move. [no] can be 1-4 (move number). It is used in a battle.\n`s)fightinfo` **-** See your fight information.')
         .addField('Move List', 'You can see the whole move list here: https://pastebin.com/raw/JEvufnyG', false)
         .setFooter('Made for fun!', 'https://cdn.discordapp.com/attachments/585988298573348864/590645802339401741/1180px-Checkmark_green.png')
         message.channel.send({embed});
