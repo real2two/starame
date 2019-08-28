@@ -115,7 +115,7 @@ client.on('message', message => {
           message.channel.send("Incorrect Arguments | `s)pay <mention user> <gold>`")
           return
         }
-        var opponent = message.mentions.users.first();
+        opponent = message.mentions.users.first();
         if (opponent == message.author) {
           message.channel.send("You can't pay yourself.")
           return
@@ -161,7 +161,7 @@ client.on('message', message => {
 
   if (cmd.startsWith('s)leave')) {
     if (fs.existsSync('data//battles//' + message.author.id + '-opponent.txt')) {
-      var opponentid = fs.readFileSync('data//battles//' + message.author.id + '-opponent.txt').toString().split('\n');
+      opponentid = fs.readFileSync('data//battles//' + message.author.id + '-opponent.txt').toString().split('\n');
       userhp = fs.readFileSync('data//battles//' + message.author.id + '-hp.txt').toString().split('\n');
       enemyhp = fs.readFileSync('data//battles//' + opponentid + '-hp.txt').toString().split('\n');
       if (fs.existsSync('data//battles//' + message.author.id + '-going.txt')) {
@@ -224,7 +224,7 @@ client.on('message', message => {
   if (cmd.startsWith('s)use1')) {
     if (fs.existsSync('data//battles//' + message.author.id + '-opponent.txt')) {
       if (fs.existsSync('data//battles//' + message.author.id + '-going.txt')) {
-        var move = fs.readFileSync('data//moves//' + message.author.id + '-1.txt').toString().split('\n');
+        move = fs.readFileSync('data//moves//' + message.author.id + '-1.txt').toString().split('\n');
         if (fs.existsSync('data//moveid//' + move + '-name.txt')) {
           useMove(message, move)
         } else {
@@ -250,7 +250,7 @@ client.on('message', message => {
   if (cmd.startsWith('s)use2')) {
     if (fs.existsSync('data//battles//' + message.author.id + '-opponent.txt')) {
       if (fs.existsSync('data//battles//' + message.author.id + '-going.txt')) {
-        var move = fs.readFileSync('data//moves//' + message.author.id + '-2.txt').toString().split('\n');
+        move = fs.readFileSync('data//moves//' + message.author.id + '-2.txt').toString().split('\n');
         if (fs.existsSync('data//moveid//' + move + '-name.txt')) {
           useMove(message, move)
         } else {
@@ -276,7 +276,7 @@ client.on('message', message => {
   if (cmd.startsWith('s)use3')) {
     if (fs.existsSync('data//battles//' + message.author.id + '-opponent.txt')) {
       if (fs.existsSync('data//battles//' + message.author.id + '-going.txt')) {
-        var move = fs.readFileSync('data//moves//' + message.author.id + '-3.txt').toString().split('\n');
+        move = fs.readFileSync('data//moves//' + message.author.id + '-3.txt').toString().split('\n');
         if (fs.existsSync('data//moveid//' + move + '-name.txt')) {
           useMove(message, move)
         } else {
@@ -302,7 +302,7 @@ client.on('message', message => {
   if (cmd.startsWith('s)use4')) {
     if (fs.existsSync('data//battles//' + message.author.id + '-opponent.txt')) {
       if (fs.existsSync('data//battles//' + message.author.id + '-going.txt')) {
-        var move = fs.readFileSync('data//moves//' + message.author.id + '-4.txt').toString().split('\n');
+        move = fs.readFileSync('data//moves//' + message.author.id + '-4.txt').toString().split('\n');
         if (fs.existsSync('data//moveid//' + move + '-name.txt')) {
           useMove(message, move)
         } else {
@@ -327,7 +327,7 @@ client.on('message', message => {
 
 if (cmd.startsWith('s)fightinfo')) {
   if (fs.existsSync('data//battles//' + message.author.id + '-opponent.txt')) {
-    var opponentid = fs.readFileSync('data//battles//' + message.author.id + '-opponent.txt').toString().split('\n');
+    opponentid = fs.readFileSync('data//battles//' + message.author.id + '-opponent.txt').toString().split('\n');
     userhp = fs.readFileSync('data//battles//' + message.author.id + '-hp.txt').toString().split('\n');
     enemyhp = fs.readFileSync('data//battles//' + opponentid + '-hp.txt').toString().split('\n');
     if (fs.existsSync('data//battles//' + message.author.id + '-poison.txt')) {
@@ -372,7 +372,7 @@ if (cmd.startsWith('s)fightinfo')) {
   if (cmd.startsWith('s)use 1')) {
     if (fs.existsSync('data//battles//' + message.author.id + '-opponent.txt')) {
       if (fs.existsSync('data//battles//' + message.author.id + '-going.txt')) {
-        var move = fs.readFileSync('data//moves//' + message.author.id + '-1.txt').toString().split('\n');
+        move = fs.readFileSync('data//moves//' + message.author.id + '-1.txt').toString().split('\n');
         if (fs.existsSync('data//moveid//' + move + '-name.txt')) {
           useMove(message, move)
         } else {
@@ -398,7 +398,7 @@ if (cmd.startsWith('s)fightinfo')) {
   if (cmd.startsWith('s)use 2')) {
     if (fs.existsSync('data//battles//' + message.author.id + '-opponent.txt')) {
       if (fs.existsSync('data//battles//' + message.author.id + '-going.txt')) {
-        var move = fs.readFileSync('data//moves//' + message.author.id + '-2.txt').toString().split('\n');
+        move = fs.readFileSync('data//moves//' + message.author.id + '-2.txt').toString().split('\n');
         if (fs.existsSync('data//moveid//' + move + '-name.txt')) {
           useMove(message, move)
         } else {
@@ -424,7 +424,7 @@ if (cmd.startsWith('s)fightinfo')) {
   if (cmd.startsWith('s)use 3')) {
     if (fs.existsSync('data//battles//' + message.author.id + '-opponent.txt')) {
       if (fs.existsSync('data//battles//' + message.author.id + '-going.txt')) {
-        var move = fs.readFileSync('data//moves//' + message.author.id + '-3.txt').toString().split('\n');
+        move = fs.readFileSync('data//moves//' + message.author.id + '-3.txt').toString().split('\n');
         if (fs.existsSync('data//moveid//' + move + '-name.txt')) {
           useMove(message, move)
         } else {
@@ -450,7 +450,7 @@ if (cmd.startsWith('s)fightinfo')) {
   if (cmd.startsWith('s)use 4')) {
     if (fs.existsSync('data//battles//' + message.author.id + '-opponent.txt')) {
       if (fs.existsSync('data//battles//' + message.author.id + '-going.txt')) {
-        var move = fs.readFileSync('data//moves//' + message.author.id + '-4.txt').toString().split('\n');
+        move = fs.readFileSync('data//moves//' + message.author.id + '-4.txt').toString().split('\n');
         if (fs.existsSync('data//moveid//' + move + '-name.txt')) {
           useMove(message, move)
         } else {
@@ -487,44 +487,44 @@ if (cmd.startsWith('s)fightinfo')) {
         userid = opponent.id
         user = opponent
       }
-      var varpoints = fs.readFileSync('data//coins//' + userid + '.txt').toString().split('\n');
-      var move1 = fs.readFileSync('data//moves//' + userid + '-1.txt').toString().split('\n');
+      varpoints = fs.readFileSync('data//coins//' + userid + '.txt').toString().split('\n');
+      move1 = fs.readFileSync('data//moves//' + userid + '-1.txt').toString().split('\n');
       if (fs.existsSync('data//moveid//' + move1 + '-name.txt')) {
-        var move1name = fs.readFileSync('data//moveid//' + move1 + '-name.txt').toString().split('\n');
-        var move1description = fs.readFileSync('data//moveid//' + move1 + '-description.txt').toString().split('\n');
+        move1name = fs.readFileSync('data//moveid//' + move1 + '-name.txt').toString().split('\n');
+        move1description = fs.readFileSync('data//moveid//' + move1 + '-description.txt').toString().split('\n');
       } else {
         move1 = 0
-        var move1name = "None"
-        var move1description = "This is not a valid move."
+        move1name = "None"
+        move1description = "This is not a valid move."
       }
-      var move2 = fs.readFileSync('data//moves//' + userid + '-2.txt').toString().split('\n');
+      move2 = fs.readFileSync('data//moves//' + userid + '-2.txt').toString().split('\n');
       if (fs.existsSync('data//moveid//' + move2 + '-name.txt')) {
-        var move2name = fs.readFileSync('data//moveid//' + move2 + '-name.txt').toString().split('\n');
-        var move2description = fs.readFileSync('data//moveid//' + move2 + '-description.txt').toString().split('\n');
+        move2name = fs.readFileSync('data//moveid//' + move2 + '-name.txt').toString().split('\n');
+        move2description = fs.readFileSync('data//moveid//' + move2 + '-description.txt').toString().split('\n');
       } else {
         move2 = 0
-        var move2name = "None"
-        var move2description = "This is not a valid move."
+        move2name = "None"
+        move2description = "This is not a valid move."
       }
-      var move3 = fs.readFileSync('data//moves//' + userid + '-3.txt').toString().split('\n');
+      move3 = fs.readFileSync('data//moves//' + userid + '-3.txt').toString().split('\n');
       if (fs.existsSync('data//moveid//' + move3 + '-name.txt')) {
-        var move3name = fs.readFileSync('data//moveid//' + move3 + '-name.txt').toString().split('\n');
-        var move3description = fs.readFileSync('data//moveid//' + move3 + '-description.txt').toString().split('\n');
+        move3name = fs.readFileSync('data//moveid//' + move3 + '-name.txt').toString().split('\n');
+        move3description = fs.readFileSync('data//moveid//' + move3 + '-description.txt').toString().split('\n');
       } else {
         move3 = 0
-        var move3name = "None"
-        var move3description = "This is not a valid move."
+        move3name = "None"
+        move3description = "This is not a valid move."
       }
-      var move4 = fs.readFileSync('data//moves//' + userid + '-4.txt').toString().split('\n');
+      move4 = fs.readFileSync('data//moves//' + userid + '-4.txt').toString().split('\n');
       if (fs.existsSync('data//moveid//' + move4 + '-name.txt')) {
-        var move4name = fs.readFileSync('data//moveid//' + move4 + '-name.txt').toString().split('\n');
-        var move4description = fs.readFileSync('data//moveid//' + move4 + '-description.txt').toString().split('\n');
+        move4name = fs.readFileSync('data//moveid//' + move4 + '-name.txt').toString().split('\n');
+        move4description = fs.readFileSync('data//moveid//' + move4 + '-description.txt').toString().split('\n');
       } else {
         move4 = 0
-        var move4name = "None"
-        var move4description = "This is not a valid move."
+        move4name = "None"
+        move4description = "This is not a valid move."
       }
-      var health = fs.readFileSync('data//maxhealth//' + userid + '.txt').toString().split('\n');
+      health = fs.readFileSync('data//maxhealth//' + userid + '.txt').toString().split('\n');
       const embed = new Discord.RichEmbed()
         .setAuthor('Main Info')
         .setColor(0xffff00)
@@ -551,8 +551,8 @@ if (cmd.startsWith('s)fightinfo')) {
           return
         } else {
           if (fs.existsSync('data//moveid//' + move[1] + '-name.txt')) {
-            var movename = fs.readFileSync('data//moveid//' + move[1] + '-name.txt').toString().split('\n');
-            var movedescription = fs.readFileSync('data//moveid//' + move[1] + '-description.txt').toString().split('\n');
+            movename = fs.readFileSync('data//moveid//' + move[1] + '-name.txt').toString().split('\n');
+            movedescription = fs.readFileSync('data//moveid//' + move[1] + '-description.txt').toString().split('\n');
             if (fs.existsSync('data//moveid//' + move[1] + '-cost.txt')) {
               cost = fs.readFileSync('data//moveid//' + move[1] + '-cost.txt').toString().split('\n');
               if (cost == 1) {
@@ -570,8 +570,8 @@ if (cmd.startsWith('s)fightinfo')) {
             hitchance = fs.readFileSync('data//moveid//' + move[1] + '-chance.txt').toString().split('\n');
             if (fs.existsSync('data//moveid//' + move[1] + '-enemydamagechance.txt')) {
               enemydamagehitchance = fs.readFileSync('data//moveid//' + move[1] + '-enemydamagechance.txt').toString().split('\n');
-              var enemydamageminstring = fs.readFileSync('data//moveid//' + move[1] + '-enemydamagemin.txt').toString().split('\n');
-              var enemydamagemaxstring = fs.readFileSync('data//moveid//' + move[1] + '-enemydamagemax.txt').toString().split('\n');
+              enemydamageminstring = fs.readFileSync('data//moveid//' + move[1] + '-enemydamagemin.txt').toString().split('\n');
+              enemydamagemaxstring = fs.readFileSync('data//moveid//' + move[1] + '-enemydamagemax.txt').toString().split('\n');
               enemydamagemin = parseFloat(enemydamageminstring, 10)
               enemydamagemax = parseFloat(enemydamagemaxstring, 10)
               enemydamageaverage = (enemydamagemax + enemydamagemin)/2
@@ -583,8 +583,8 @@ if (cmd.startsWith('s)fightinfo')) {
             }
             if (fs.existsSync('data//moveid//' + move[1] + '-enemyhealchance.txt')) {
               enemyhealhitchance = fs.readFileSync('data//moveid//' + move[1] + '-enemyhealchance.txt').toString().split('\n');
-              var enemyhealminstring = fs.readFileSync('data//moveid//' + move[1] + '-enemyhealmin.txt').toString().split('\n');
-              var enemyhealmaxstring = fs.readFileSync('data//moveid//' + move[1] + '-enemyhealmax.txt').toString().split('\n');
+              enemyhealminstring = fs.readFileSync('data//moveid//' + move[1] + '-enemyhealmin.txt').toString().split('\n');
+              enemyhealmaxstring = fs.readFileSync('data//moveid//' + move[1] + '-enemyhealmax.txt').toString().split('\n');
               enemyhealmin = parseFloat(enemyhealminstring, 10)
               enemyhealmax = parseFloat(enemyhealmaxstring, 10)
               enemyhealaverage = (enemyhealmax + enemyhealmin)/2
@@ -596,8 +596,8 @@ if (cmd.startsWith('s)fightinfo')) {
             }
             if (fs.existsSync('data//moveid//' + move[1] + '-enemypoisonchance.txt')) {
               enemypoisonhitchance = fs.readFileSync('data//moveid//' + move[1] + '-enemypoisonchance.txt').toString().split('\n');
-              var enemypoisonminstring = fs.readFileSync('data//moveid//' + move[1] + '-enemypoisonmin.txt').toString().split('\n');
-              var enemypoisonmaxstring = fs.readFileSync('data//moveid//' + move[1] + '-enemypoisonmax.txt').toString().split('\n');
+              enemypoisonminstring = fs.readFileSync('data//moveid//' + move[1] + '-enemypoisonmin.txt').toString().split('\n');
+              enemypoisonmaxstring = fs.readFileSync('data//moveid//' + move[1] + '-enemypoisonmax.txt').toString().split('\n');
               enemypoisonmin = parseFloat(enemypoisonminstring, 10)
               enemypoisonmax = parseFloat(enemypoisonmaxstring, 10)
               enemypoisonaverage = (enemypoisonmax + enemypoisonmin)/2
@@ -609,8 +609,8 @@ if (cmd.startsWith('s)fightinfo')) {
             }
             if (fs.existsSync('data//moveid//' + move[1] + '-userdamagechance.txt')) {
               userdamagehitchance = fs.readFileSync('data//moveid//' + move[1] + '-userdamagechance.txt').toString().split('\n');
-              var userdamageminstring = fs.readFileSync('data//moveid//' + move[1] + '-userdamagemin.txt').toString().split('\n');
-              var userdamagemaxstring = fs.readFileSync('data//moveid//' + move[1] + '-userdamagemax.txt').toString().split('\n');
+              userdamageminstring = fs.readFileSync('data//moveid//' + move[1] + '-userdamagemin.txt').toString().split('\n');
+              userdamagemaxstring = fs.readFileSync('data//moveid//' + move[1] + '-userdamagemax.txt').toString().split('\n');
               userdamagemin = parseFloat(userdamageminstring, 10)
               userdamagemax = parseFloat(userdamagemaxstring, 10)
               userdamageaverage = (userdamagemax + enemydamagemin)/2
@@ -622,8 +622,8 @@ if (cmd.startsWith('s)fightinfo')) {
             }
             if (fs.existsSync('data//moveid//' + move[1] + '-userhealchance.txt')) {
               userhealhitchance = fs.readFileSync('data//moveid//' + move[1] + '-userhealchance.txt').toString().split('\n');
-              var userhealminstring = fs.readFileSync('data//moveid//' + move[1] + '-userhealmin.txt').toString().split('\n');
-              var userhealmaxstring = fs.readFileSync('data//moveid//' + move[1] + '-userhealmax.txt').toString().split('\n');
+              userhealminstring = fs.readFileSync('data//moveid//' + move[1] + '-userhealmin.txt').toString().split('\n');
+              userhealmaxstring = fs.readFileSync('data//moveid//' + move[1] + '-userhealmax.txt').toString().split('\n');
               userhealmin = parseFloat(userhealminstring, 10)
               userhealmax = parseFloat(userhealmaxstring, 10)
               userhealaverage = (userhealmax + userhealmin)/2
@@ -635,8 +635,8 @@ if (cmd.startsWith('s)fightinfo')) {
             }
             if (fs.existsSync('data//moveid//' + move[1] + '-userpoisonchance.txt')) {
               userpoisonhitchance = fs.readFileSync('data//moveid//' + move[1] + '-userpoisonchance.txt').toString().split('\n');
-              var userpoisonminstring = fs.readFileSync('data//moveid//' + move[1] + '-userpoisonmin.txt').toString().split('\n');
-              var userpoisonmaxstring = fs.readFileSync('data//moveid//' + move[1] + '-userpoisonmax.txt').toString().split('\n');
+              userpoisonminstring = fs.readFileSync('data//moveid//' + move[1] + '-userpoisonmin.txt').toString().split('\n');
+              userpoisonmaxstring = fs.readFileSync('data//moveid//' + move[1] + '-userpoisonmax.txt').toString().split('\n');
               userpoisonmin = parseFloat(userpoisonminstring, 10)
               userpoisonmax = parseFloat(userpoisonmaxstring, 10)
               userpoisonaverage = (userpoisonmax + userpoisonmin)/2
@@ -728,7 +728,7 @@ if (cmd.startsWith('s)fightinfo')) {
               return
             }
             cost = parseFloat(cost, 10)
-            var varpoints = fs.readFileSync('data//coins//' + message.author.id + '.txt').toString().split('\n');
+            varpoints = fs.readFileSync('data//coins//' + message.author.id + '.txt').toString().split('\n');
             points = parseFloat(varpoints, 10)
             if (points < cost) {
               message.channel.send('Sorry, but you do not have enough coins to buy this move.')
@@ -775,9 +775,9 @@ if (cmd.startsWith('s)fightinfo')) {
     if (fs.existsSync('data//coins//' + message.author.id + '.txt')) {
       cost = 10
       cost = parseFloat(cost, 10)
-      var varpoints = fs.readFileSync('data//coins//' + message.author.id + '.txt').toString().split('\n');
+      varpoints = fs.readFileSync('data//coins//' + message.author.id + '.txt').toString().split('\n');
       points = parseFloat(varpoints, 10)
-      var varhp = fs.readFileSync('data//maxhealth//' + message.author.id + '.txt').toString().split('\n');
+      varhp = fs.readFileSync('data//maxhealth//' + message.author.id + '.txt').toString().split('\n');
       hp = parseFloat(varhp, 10)
       if (hp == 999) {
         message.channel.send('Sorry, but you have the maximum amount of HP.')
@@ -818,7 +818,7 @@ if (cmd.startsWith('s)fightinfo')) {
           message.channel.send('You have to mention **only** 1 member to fight them! (first mention only)');
           return
         } else {
-          var opponent = message.mentions.users.first();
+          opponent = message.mentions.users.first();
           if (opponent == message.author) {
             message.channel.send("You can't fight yourself.")
             return
@@ -830,8 +830,8 @@ if (cmd.startsWith('s)fightinfo')) {
             return
           } else {
             if (fs.existsSync('data//coins//' + opponent.id + '.txt')) {
-              var userhealth = fs.readFileSync('data//maxhealth//' + message.author.id + '.txt').toString().split('\n');
-              var enemyhealth = fs.readFileSync('data//maxhealth//' + opponent.id + '.txt').toString().split('\n');
+              userhealth = fs.readFileSync('data//maxhealth//' + message.author.id + '.txt').toString().split('\n');
+              enemyhealth = fs.readFileSync('data//maxhealth//' + opponent.id + '.txt').toString().split('\n');
               if (opponent.id == '579317044915208202') {
                 random = 2
               } else {
@@ -900,8 +900,8 @@ function useMove(message, move) {
   fs.unlink('data//battles//' + message.author.id + '-going.txt', function (err) {
   if (err) throw err;
   });
-  var opponentid = fs.readFileSync('data//battles//' + message.author.id + '-opponent.txt').toString().split('\n');
-  var movename = fs.readFileSync('data//moveid//' + move + '-name.txt').toString().split('\n');
+  opponentid = fs.readFileSync('data//battles//' + message.author.id + '-opponent.txt').toString().split('\n');
+  movename = fs.readFileSync('data//moveid//' + move + '-name.txt').toString().split('\n');
   userhpstring = fs.readFileSync('data//battles//' + message.author.id + '-hp.txt').toString().split('\n');
   userhp = parseFloat(userhpstring, 10)
   enemyhpstring = fs.readFileSync('data//battles//' + opponentid + '-hp.txt').toString().split('\n');
@@ -922,11 +922,11 @@ function useMove(message, move) {
       }
     } else {
       poisonperson = fs.readFileSync('data//battles//' + opponentid + '-poisonperson.txt').toString().split('\n');
-      var poisonmove = fs.readFileSync('data//battles//' + opponentid + '-poison.txt').toString().split('\n');
-      var poisondamagemaxstring = fs.readFileSync('data//moveid//' + poisonmove + '-' + poisonperson + 'poisonmax.txt').toString().split('\n');
+      poisonmove = fs.readFileSync('data//battles//' + opponentid + '-poison.txt').toString().split('\n');
+      poisondamagemaxstring = fs.readFileSync('data//moveid//' + poisonmove + '-' + poisonperson + 'poisonmax.txt').toString().split('\n');
       poisondamagemax = parseFloat(poisondamagemaxstring, 10)
       if (poisondamagemax !== 0) {
-        var poisondamageminstring = fs.readFileSync('data//moveid//' + poisonmove + '-' + poisonperson + 'poisonmin.txt').toString().split('\n');
+        poisondamageminstring = fs.readFileSync('data//moveid//' + poisonmove + '-' + poisonperson + 'poisonmin.txt').toString().split('\n');
         poisondamagemin = parseFloat(poisondamageminstring, 10)
         movepoisonrandom = Math.floor(Math.random() * (poisondamagemax - poisondamagemin)) + poisondamagemin;
         if (movepoisonrandom < enemyhp) {
@@ -964,11 +964,11 @@ function useMove(message, move) {
       }
     } else {
       poisonperson = fs.readFileSync('data//battles//' + message.author.id + '-poisonperson.txt').toString().split('\n');
-      var poisonmove = fs.readFileSync('data//battles//' + message.author.id + '-poison.txt').toString().split('\n');
-      var poisondamagemaxstring = fs.readFileSync('data//moveid//' + poisonmove + '-' + poisonperson + 'poisonmax.txt').toString().split('\n');
+      poisonmove = fs.readFileSync('data//battles//' + message.author.id + '-poison.txt').toString().split('\n');
+      poisondamagemaxstring = fs.readFileSync('data//moveid//' + poisonmove + '-' + poisonperson + 'poisonmax.txt').toString().split('\n');
       poisondamagemax = parseFloat(poisondamagemaxstring, 10)
       if (poisondamagemax !== 0) {
-        var poisondamageminstring = fs.readFileSync('data//moveid//' + poisonmove + '-' + poisonperson + 'poisonmin.txt').toString().split('\n');
+        poisondamageminstring = fs.readFileSync('data//moveid//' + poisonmove + '-' + poisonperson + 'poisonmin.txt').toString().split('\n');
         poisondamagemin = parseFloat(poisondamageminstring, 10)
         movepoisonrandom = Math.floor(Math.random() * (poisondamagemax - poisondamagemin)) + poisondamagemin;
         if (movepoisonrandom < userhp) {
@@ -1010,9 +1010,9 @@ function useMove(message, move) {
           hitchance1 = parseFloat(hitchancestring, 10)
           hitchance = Math.floor(Math.random() * 100) + 1;
           if (hitchance <= hitchance1) {
-            var movedamageminstring = fs.readFileSync('data//moveid//' + move + '-enemydamagemin.txt').toString().split('\n');
+            movedamageminstring = fs.readFileSync('data//moveid//' + move + '-enemydamagemin.txt').toString().split('\n');
             movedamagemin = parseFloat(movedamageminstring, 10)
-            var movedamagemaxstring = fs.readFileSync('data//moveid//' + move + '-enemydamagemax.txt').toString().split('\n');
+            movedamagemaxstring = fs.readFileSync('data//moveid//' + move + '-enemydamagemax.txt').toString().split('\n');
             movedamagemax = parseFloat(movedamagemaxstring, 10)
             if (movedamagemax == 0) {
               movedamage = 0
@@ -1057,14 +1057,14 @@ function useMove(message, move) {
           hitchance1 = parseFloat(hitchancestring, 10)
           hitchance = Math.floor(Math.random() * 100) + 1;
           if (hitchance <= hitchance1) {
-            var movehealminstring = fs.readFileSync('data//moveid//' + move + '-enemyhealmin.txt').toString().split('\n');
+            movehealminstring = fs.readFileSync('data//moveid//' + move + '-enemyhealmin.txt').toString().split('\n');
             movehealmin = parseFloat(movehealminstring, 10)
-            var movehealhighstring = fs.readFileSync('data//moveid//' + move + '-enemyhealmax.txt').toString().split('\n');
+            movehealhighstring = fs.readFileSync('data//moveid//' + move + '-enemyhealmax.txt').toString().split('\n');
             movehealhigh = parseFloat(movehealhighstring, 10)
             if (movehealhigh !== 0) {
               moveheal = Math.floor(Math.random() * (movehealhigh-movehealmin)) + movehealmin;
               enemyhp = enemyhp + moveheal
-              var maxhealthstring = fs.readFileSync('data//maxhealth//' + opponentid + '.txt').toString().split('\n');
+              maxhealthstring = fs.readFileSync('data//maxhealth//' + opponentid + '.txt').toString().split('\n');
               maxhealth = parseFloat(maxhealthstring, 10)
               if (criticalchance == 1) {
                 maxhealth = maxhealth * 2
@@ -1109,9 +1109,9 @@ function useMove(message, move) {
                 notes = notes + "The move's poison didn't do anything to <@" + opponentid + ">, because the user already had poison!"
               }
             } else {
-              var movepoisonminstring = fs.readFileSync('data//moveid//' + move + '-enemypoisonmin.txt').toString().split('\n');
+              movepoisonminstring = fs.readFileSync('data//moveid//' + move + '-enemypoisonmin.txt').toString().split('\n');
               movepoisonmin = parseFloat(movepoisonminstring, 10)
-              var movepoisonhighstring = fs.readFileSync('data//moveid//' + move + '-enemypoisonmax.txt').toString().split('\n');
+              movepoisonhighstring = fs.readFileSync('data//moveid//' + move + '-enemypoisonmax.txt').toString().split('\n');
               movepoisonhigh = parseFloat(movepoisonhighstring, 10)
               if (movepoisonhigh !== 0) {
                 movepoison = Math.floor(Math.random() * (movepoisonhigh - movepoisonmin)) + movepoisonmin;
@@ -1160,9 +1160,9 @@ function useMove(message, move) {
           hitchance1 = parseFloat(hitchancestring, 10)
           hitchance = Math.floor(Math.random() * 100) + 1;
           if (hitchance <= hitchance1) {
-            var movedamageminstring = fs.readFileSync('data//moveid//' + move + '-userdamagemin.txt').toString().split('\n');
+            movedamageminstring = fs.readFileSync('data//moveid//' + move + '-userdamagemin.txt').toString().split('\n');
             movedamagemin = parseFloat(movedamageminstring, 10)
-            var movedamagemaxstring = fs.readFileSync('data//moveid//' + move + '-userdamagemax.txt').toString().split('\n');
+            movedamagemaxstring = fs.readFileSync('data//moveid//' + move + '-userdamagemax.txt').toString().split('\n');
             movedamagemax = parseFloat(movedamagemaxstring, 10)
             if (movedamagemax == 0) {
               movedamage = 0
@@ -1207,14 +1207,14 @@ function useMove(message, move) {
           hitchance1 = parseFloat(hitchancestring, 10)
           hitchance = Math.floor(Math.random() * 100) + 1;
           if (hitchance <= hitchance1) {
-            var movehealminstring = fs.readFileSync('data//moveid//' + move + '-userhealmin.txt').toString().split('\n');
+            movehealminstring = fs.readFileSync('data//moveid//' + move + '-userhealmin.txt').toString().split('\n');
             movehealmin = parseFloat(movehealminstring, 10)
-            var movehealhighstring = fs.readFileSync('data//moveid//' + move + '-userhealmax.txt').toString().split('\n');
+            movehealhighstring = fs.readFileSync('data//moveid//' + move + '-userhealmax.txt').toString().split('\n');
             movehealhigh = parseFloat(movehealhighstring, 10)
             if (movehealhigh !== 0) {
               moveheal = Math.floor(Math.random() * (movehealhigh - movehealmin)) + movehealmin;
               userhp = userhp + moveheal
-              var maxhealthstring = fs.readFileSync('data//maxhealth//' + message.author.id +  '.txt').toString().split('\n');
+              maxhealthstring = fs.readFileSync('data//maxhealth//' + message.author.id +  '.txt').toString().split('\n');
               maxhealth = parseFloat(maxhealthstring, 10)
               if (criticalchance == 1) {
                 maxhealth = maxhealth * 2
@@ -1259,9 +1259,9 @@ function useMove(message, move) {
                 notes = notes + "The move's poison didn't do anything to " + message.author + ", because the user already had poison!"
               }
             } else {
-              var movepoisonminstring = fs.readFileSync('data//moveid//' + move + '-userpoisonmin.txt').toString().split('\n');
+              movepoisonminstring = fs.readFileSync('data//moveid//' + move + '-userpoisonmin.txt').toString().split('\n');
               movepoisonmin = parseFloat(movepoisonminstring, 10)
-              var movepoisonhighstring = fs.readFileSync('data//moveid//' + move + '-userpoisonmax.txt').toString().split('\n');
+              movepoisonhighstring = fs.readFileSync('data//moveid//' + move + '-userpoisonmax.txt').toString().split('\n');
               movepoisonhigh = parseFloat(movepoisonhighstring, 10)
               if (movepoisonhigh !== 0) {
                 movepoison = Math.floor(Math.random() * (movepoisonhigh - movepoisonmin)) + movepoisonmin;
@@ -1340,7 +1340,7 @@ function useMove(message, move) {
       .addField('Notes', notes, false)
       .setFooter('Made for fun!', 'https://cdn.discordapp.com/attachments/585988298573348864/590645802339401741/1180px-Checkmark_green.png')
     message.channel.send({embed});
-    var varpoints = fs.readFileSync('data//coins//' + message.author.id + '.txt').toString().split('\n');
+    varpoints = fs.readFileSync('data//coins//' + message.author.id + '.txt').toString().split('\n');
     points = parseFloat(varpoints, 10)
     points = points + 1
     fs.writeFile('data//coins//' + message.author.id + '.txt', points, function(err) {
