@@ -12,14 +12,7 @@ client.on('message', message => {
   if(message.author.bot) return;
   let cmd = message.content.toLowerCase();
 
-//  if (cmd.startsWith("s)ping") || cmd.startsWith("s)fightinfo") || cmd.startsWith("s)help") || cmd.startsWith("s)start") || cmd.startsWith("s)leave") || cmd.startsWith("s)use") || cmd.startsWith("s)info") || cmd.startsWith("s)moveinfo") || cmd.startsWith("s)buymove") || cmd.startsWith("s)buyhp") || cmd.startsWith("s)pay") || cmd.startsWith("s)leave")) {
-//    message.channel.send('Starame is in maintain!')
-//    return
-//  }
-
-  try {
-
-  if (cmd.startsWith("s)ping") || cmd.startsWith("s)fightinfo") || cmd.startsWith("s)help") || cmd.startsWith("s)start") || cmd.startsWith("s)leave") || cmd.startsWith("s)use") || cmd.startsWith("s)info") || cmd.startsWith("s)moveinfo") || cmd.startsWith("s)buymove") || cmd.startsWith("s)buyhp") || cmd.startsWith("s)pay") || cmd.startsWith("s)leave")) {
+  if (cmd.startsWith("s)ping") || cmd.startsWith("s)fightinfo") || cmd.startsWith("s)help") || cmd.startsWith("s)start") || cmd.startsWith("s)leave") || cmd.startsWith("s)use") || cmd.startsWith("s)info") || cmd.startsWith("s)moveinfo") || cmd.startsWith("s)buymove") || cmd.startsWith("s)buyhp") || cmd.startsWith("s)pay") || cmd.startsWith("s)leave") || cmd.startsWith("s)fight")) {
     if (talkedRecently.has('u-' + message.author.id)) {
       message.channel.send("You are in a 3 second cooldown.");
       return
@@ -31,7 +24,7 @@ client.on('message', message => {
     }
   }
 
-  if (cmd.startsWith("s)ping") || cmd.startsWith("s)fightinfo") || cmd.startsWith("s)help") || cmd.startsWith("s)start") || cmd.startsWith("s)leave") || cmd.startsWith("s)use") || cmd.startsWith("s)info") || cmd.startsWith("s)moveinfo") || cmd.startsWith("s)buymove") || cmd.startsWith("s)buyhp") || cmd.startsWith("s)pay") || cmd.startsWith("s)leave")) {
+  if (cmd.startsWith("s)ping") || cmd.startsWith("s)fightinfo") || cmd.startsWith("s)help") || cmd.startsWith("s)start") || cmd.startsWith("s)leave") || cmd.startsWith("s)use") || cmd.startsWith("s)info") || cmd.startsWith("s)moveinfo") || cmd.startsWith("s)buymove") || cmd.startsWith("s)buyhp") || cmd.startsWith("s)pay") || cmd.startsWith("s)leave") || cmd.startsWith("s)fight")) {
     if (talkedRecently.has('global')) {
       console.log('"' + message.author.id + ' has tried to run a command during cooldown.')
       message.channel.send("This bot is in a global cooldown of 1 second.");
