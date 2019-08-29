@@ -96,7 +96,7 @@ client.on('message', message => {
         const embed = new Discord.RichEmbed()
           .setAuthor('Start')
           .setColor(0xffff00)
-          .setDescription('You have started the game!')
+          .setDescription('You have started the game! Please run the command `s)help`!')
           .setFooter('Made for fun!', 'https://cdn.discordapp.com/attachments/585988298573348864/590645802339401741/1180px-Checkmark_green.png')
         message.channel.send({embed});
     }
