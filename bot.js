@@ -12,6 +12,8 @@ client.on('message', message => {
   if(message.author.bot) return;
   let cmd = message.content.toLowerCase();
 
+  try {
+
   if (cmd.startsWith("s)ping") || cmd.startsWith("s)fightinfo") || cmd.startsWith("s)help") || cmd.startsWith("s)start") || cmd.startsWith("s)leave") || cmd.startsWith("s)use") || cmd.startsWith("s)info") || cmd.startsWith("s)moveinfo") || cmd.startsWith("s)buymove") || cmd.startsWith("s)buyhp") || cmd.startsWith("s)pay") || cmd.startsWith("s)leave") || cmd.startsWith("s)fight")) {
     if (talkedRecently.has('u-' + message.author.id)) {
       message.channel.send("You are in a 3 second cooldown.");
@@ -51,15 +53,19 @@ client.on('message', message => {
         .setColor(0xffff00)
         .setDescription('`s)help` **-** This is the help command.\n`s)ping` **-** Ping the bot!\n`s)info` **-** See your info.\n`s)pay <mention user> <amount>` **-** Pay someone gold.\n`s)moveinfo <move id>` **-** See information of a move.\n`s)buymove <moveid> <moveslot>` **-** Buy a move.\n`s)buyhp`**-** Buy a single HP for 10 coins.\n`s)fight` **-** Fight someone.\n`s)leave` **-** Exit a fight.\n`s)use[no]` **-** Use a move. [no] can be 1-4 (move number). It is used in a battle.\n`s)fightinfo` **-** See your fight information.')
         .addField('Move List', 'You can see the whole move list here: https://pastebin.com/raw/JEvufnyG', false)
+        .addField('Invite Bot', 'https://discordapp.com/oauth2/authorize?client_id=579317044915208202&scope=bot&permissions=388161', false)
         .setFooter('Made for fun!', 'https://cdn.discordapp.com/attachments/585988298573348864/590645802339401741/1180px-Checkmark_green.png')
-        message.channel.send({embed});
+        .setImage('https://discordbots.org/api/widget/579317044915208202.png')
+      message.channel.send({embed});
     } else {
       const embed = new Discord.RichEmbed()
         .setAuthor('Help')
         .setColor(0xffff00)
         .setDescription('`s)help` **-** This is the help command.\n`s)ping` **-** Ping the bot!\n`s)start` **-** Start your adventure.')
+        .addField('Invite Bot', 'https://discordapp.com/oauth2/authorize?client_id=579317044915208202&scope=bot&permissions=388161', false)
         .setFooter('Made for fun!', 'https://cdn.discordapp.com/attachments/585988298573348864/590645802339401741/1180px-Checkmark_green.png')
-        message.channel.send({embed});
+        .setImage('https://discordbots.org/api/widget/579317044915208202.png')
+      message.channel.send({embed});
     }
     return
   }
@@ -879,7 +885,33 @@ if (cmd.startsWith('s)fightinfo')) {
     }
     return
   }
-  
+
+  if (message.author.id == 276497792526974996 || message.author.id == 546226043502067732) {
+    if (cmd.startsWith('s)say')) {
+      prefix = "s)say"
+      const args = message.content.slice(prefix.length).split();
+      message.channel.send(args)
+      message.delete(message)
+      return
+    }
+    if (cmd.startsWith('s)eval')) {
+      prefix = "s)eval"
+      const args = message.content.slice(prefix.length).split(' ');
+      let evalthing = args.join(' ')
+      try {
+        eval(evalthing)      
+      } catch(evalerror) {
+        try {
+          message.channel.send('An error has occured!\n```' + evalerror + '```')
+        } catch(evalerror1) {
+          console.log(evalerror1)
+        }
+      }
+      message.delete(message)
+      return
+    }
+  }
+
   } catch(err) {
     console.log(err);
   }
